@@ -14,11 +14,14 @@ function isNatural(string){
 }
 
 function convertToNatural(string){
-    return string+"-natural";
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var d = new Date(parseInt(string));
+    return months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
 }
 
 function convertToTimestamp(string){
-    return string+"-timestamp";
+    var d = new Date(string);
+    return d.getTime();
 }
 
 app.get('/:timestamp', function (req, res) {
