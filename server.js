@@ -1,5 +1,7 @@
 var express = require('express')
 var app = express()
+var port = process.env.PORT || 8080;
+
 var defaultPageHTML = `
 <html>
 <body>
@@ -65,6 +67,6 @@ app.get('/:timestamp', function (req, res) {
     res.send(responseObject);
 })
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(port, function () {
+  console.log('Example app listening on port ' + port)
 })
